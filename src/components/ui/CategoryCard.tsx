@@ -1,6 +1,6 @@
-import { ICategory } from "../interfaces/category.interface"
+import type { ICategory } from "../../interfaces/category.interface"
 
-const Category = (props: ICategory) => {
+const CategoryCard = (props: ICategory) => {
 	const { id, name, image } = props
 	return (
 		<a
@@ -13,4 +13,4 @@ const Category = (props: ICategory) => {
 	)
 }
 
-export default Category
+export default CategoryCard

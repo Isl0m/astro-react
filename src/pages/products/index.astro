@@ -1,14 +1,14 @@
 ---
-import Layout from "../../layouts/Layout.astro"
-import ProductCards from "../../components/ProductCards"
+import Layout from "@/layouts/Layout.astro"
+import ProductCards from "@/ui/ProductCards"
 
-const response = await fetch(
-	"https://api.escuelajs.co/api/v1/products?offset=0&limit=9"
-)
+const response = await fetch("https://api.escuelajs.co/api/v1/products")
 const data = await response.json()
 ---
 
 <Layout title="Products Page">
 	<h1 class="text-3xl font-bold">All Product</h1>
-	<ProductCards products={data} />
+	<div class="flex flex-wrap gap-8 mt-4">
+		{data && data.map((item) => <ProductCards client:visible {...item} />)}
+	</div>
 </Layout>

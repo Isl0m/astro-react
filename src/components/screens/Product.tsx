@@ -1,4 +1,4 @@
-import { IProduct } from "../interfaces/product.interface"
+import type { IProduct } from "../../interfaces/product.interface"
 
 const Category = (props: IProduct) => {
 	const { id, title, description, images, price } = props
@@ -9,7 +9,12 @@ const Category = (props: IProduct) => {
 			<p className="text-gray-300">Price: {price}</p>
 			<div className="flex flex-wrap gap-8 mt-4 ">
 				{images.map((image) => (
-					<img src={image} alt={title} className="rounded-md h-64" />
+					<img
+						src={image}
+						key={title}
+						alt={title}
+						className="rounded-md h-64"
+					/>
 				))}
 			</div>
 		</div>
