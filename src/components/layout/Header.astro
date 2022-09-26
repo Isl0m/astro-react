@@ -1,0 +1,30 @@
+---
+import { BsGithub, BsTelegram } from "react-icons/bs"
+import Link from "./Link.astro"
+import DropdownMenu from "./DropdownMenu"
+---
+
+<header
+	class="fixed w-full text-white bg-gray-900 bg-opacity-40 backdrop-blur-md p-4 z-50"
+>
+	<nav class="flex items-center justify-between">
+		<h1 class="flex gap-2">
+			<img src="/favicon.svg" height={24} width={24} alt="logo" />
+			<a href="/" class="text-xl font-bold">Astro Project</a>
+		</h1>
+		<div class="items-center gap-6 hidden md:flex">
+			<Link href="/">Home</Link>
+			<Link href="/products">Products</Link>
+			<Link href="/about">About</Link>
+		</div>
+		<div class="items-center gap-6 hidden md:flex">
+			<Link href="https://t.me/dev_islom" target="_blank">
+				<BsTelegram size={24} title="Telegram" />
+			</Link>
+			<Link href="https://github.com/Isl0m" target="_blank">
+				<BsGithub size={24} title="GitHub" />
+			</Link>
+		</div>
+		<DropdownMenu client:visible tags={["Home", "Products", "About"]} />
+	</nav>
+</header>

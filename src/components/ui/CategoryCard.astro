@@ -1,0 +1,19 @@
+---
+import { Image } from "@astrojs/image/components"
+import type { ICategory } from "../../interfaces/category.interface"
+
+const { id, name, image } = Astro.props as ICategory
+---
+
+<li class="hover:-translate-y-2 transition-transform ease-in-out">
+	<a href={`/categories/${id}`}>
+		<Image
+			src={image}
+			alt={name}
+			width={720 * 2}
+			aspectRatio={2.0}
+			class="h-64 rounded-t-md"
+		/>
+		<h2 class="text-lg p-2 text-center">{name}</h2>
+	</a>
+</li>

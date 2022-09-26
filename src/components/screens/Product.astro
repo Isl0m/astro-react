@@ -1,0 +1,25 @@
+---
+import { Image } from "@astrojs/image/components"
+import type { IProduct } from "../../interfaces/product.interface"
+
+const { id, title, description, images, price } = Astro.props as IProduct
+---
+
+<h1 class="text-3xl font-bold">{title}</h1>
+<p class="text-gray-300 my-2">{description}</p>
+<p class="text-gray-300">Price: {price}$</p>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+	{
+		images.map((image) => (
+			<li>
+				<Image
+					src={image}
+					alt={title}
+					width={720 * 2}
+					aspectRatio={2.0}
+					class="rounded-md h-64"
+				/>
+			</li>
+		))
+	}
+</ul>

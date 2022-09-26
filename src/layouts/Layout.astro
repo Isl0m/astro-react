@@ -1,5 +1,6 @@
 ---
-import Header from "@/layout/Header"
+import Footer from "@/layout/Footer.astro"
+import Header from "@/layout/Header.astro"
 interface Props {
 	title?: string
 }
@@ -25,9 +26,10 @@ const { title = "Astro" } = Astro.props
 		</style>
 	</head>
 	<body class="bg-gray-900 text-white">
-		<Header client:load pathName={Astro.url.pathname} />
-		<div class="container md:w-3/4 w-4/5 mx-auto pt-16">
+		<Header />
+		<div class="px-8 mx-auto max-w-4xl pt-20">
 			<slot />
 		</div>
+		<Footer />
 	</body>
 </html>

@@ -1,0 +1,22 @@
+---
+import cn from "classnames"
+
+interface Props {
+	href: string
+	target?: string
+	className?: string
+}
+
+const { href, target,className } = Astro.props
+const isActive = Astro.url.pathname === href
+---
+
+<a
+	class={cn("font-normal hover:font-bold", {
+		["text-sky-500 !font-bold"]: isActive,className
+	})}
+	href={href}
+	target={target}
+>
+	<slot />
+</a>
