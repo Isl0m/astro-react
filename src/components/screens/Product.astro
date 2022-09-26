@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components"
+// import { Image } from "@astrojs/image/components"
 import type { IProduct } from "../../interfaces/product.interface"
 
 const { id, title, description, images, price } = Astro.props as IProduct
@@ -12,11 +12,10 @@ const { id, title, description, images, price } = Astro.props as IProduct
 	{
 		images.map((image) => (
 			<li>
-				<Image
+				<img
 					src={image}
 					alt={title}
 					width={720 * 2}
-					aspectRatio={2.0}
 					class="rounded-md h-64"
 				/>
 			</li>
