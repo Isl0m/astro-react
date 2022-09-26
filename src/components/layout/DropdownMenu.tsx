@@ -1,4 +1,4 @@
-import { BsList } from "react-icons/bs"
+import { BsList } from "react-icons/bs/index"
 import { useState } from "react"
 import DropdownMenuItem from "./DropdownMenuItem"
 

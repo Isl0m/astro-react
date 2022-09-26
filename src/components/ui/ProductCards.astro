@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components"
+// import { Image } from "@astrojs/image/components"
 import type { IProduct } from "../../interfaces/product.interface"
 
 const { id, title, price, images } = Astro.props as IProduct
@@ -13,11 +13,10 @@ const { id, title, price, images } = Astro.props as IProduct
 			<h1 class="text-3xl font-bold">{title}</h1>
 			<p class="text-gray-300">Price: {price}$</p>
 		</div>
-		<Image
+		<img
 			src={images[0]}
 			alt={title}
 			width={720 * 2}
-			aspectRatio={2.0}
 			class="h-64 rounded-b-md"
 		/>
 	</a>
